@@ -120,14 +120,6 @@ int main(){
 	cin>>s;
 	
 	cout<<"string is "<<pallindrome(s);
-//	if(ans==1){
-//		cout<<"string is pallindrome"<<endl;
-//	}
-//	else if(ans==0){
-//		cout<<"string is not pallindrome"<<endl;
-//	}
-//	
-	
 	
 	
 	
