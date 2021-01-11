@@ -2,23 +2,22 @@
 #include<algorithm>
 #include<string.h>
 using namespace std;
-int stepsToMoveDiskFromAToCHelper(n,A,B,C){
+void stepsToMoveDiskFromAToCHelper(int n,char A,char B,char C){
 	
 	if(n==1){
-		return 1;
+		cout<<"Move 1 from "<<A <<"to "<<C<<endl;
+		return;
 	}
 	
-	int a=stepsToMoveDiskFromAToCHelper(n-1,A,C,B);
-	int b=stepsToMoveDiskFromAToCHelper(n-1,B,A,C);
-	return a+b+1;
 	
-	
-	
+	stepsToMoveDiskFromAToCHelper(n-1,A,C,B);
+	cout<<"Move "<<n <<"form "<<A <<"to "<<C<<endl;
+	stepsToMoveDiskFromAToCHelper(n-1,B,A,C);
 	
 	
 }
-int stepsToMoveDiskFromAToC(int n){
-	char A,B,C;
+void stepsToMoveDiskFromAToC(int n){
+	char A='A',B='B',C='C';
 	
 	stepsToMoveDiskFromAToCHelper(n,A,B,C);
 	
