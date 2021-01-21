@@ -27,15 +27,9 @@ int partition(int arr[],int low,int high){
 			
 		}
 		j++;
-		
 	}
 	swap(&arr[i+1],&arr[high]);
 	return i+1;
-	
-	
-	
-	
-	
 }
 
 void quickSortUsingLemutoPartitionHelper(int arr[],int low,int high,int n){
@@ -44,10 +38,6 @@ void quickSortUsingLemutoPartitionHelper(int arr[],int low,int high,int n){
 		int p=partition(arr,low,high);
 		quickSortUsingLemutoPartitionHelper(arr,low,p-1,n);
 		quickSortUsingLemutoPartitionHelper(arr,p+1,high,n);
-		
-		
-		
-		
 	}
 }
 
@@ -73,7 +63,4 @@ int main(){
 	quickSortUsingLemutoPartition(arr,n);
 	printArray(arr,n);
 	}
-	
-	
 }
-
