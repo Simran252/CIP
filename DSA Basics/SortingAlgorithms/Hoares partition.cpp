@@ -33,6 +33,7 @@ int hoaresPartiton(int arr[],int n,int low,int high){
 			return j;
 		}
 		else{
+			
 			swap(&arr[i],&arr[j]);
 		}
 	}
