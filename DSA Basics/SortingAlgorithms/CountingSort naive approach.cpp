@@ -1,7 +1,5 @@
 #include<iostream>
 using namespace std;
-
-
 void printArray(int arr[],int n){
 	
 	for(int i=0;i<n;i++){
@@ -30,14 +28,9 @@ void countingSortNaiveApp(int arr[],int n,int k){
 		{
 			arr[index]=i;
 			index++;
-			
-			
-			
-			
 		}
 			
 	}
-	
 }
 int main(){
 	int T;
