@@ -27,7 +27,6 @@ void bucketSort(int arr[],int n,int k){
 	for(int i=0;i<n;i++){
 		int bindex=(k*arr[i])/max;
 		bkt[bindex].push_back(arr[i]);
-		
 	}
 	//sort the buckets
 	for(int i=0;i<k;i++){
