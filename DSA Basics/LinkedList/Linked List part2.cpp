@@ -22,27 +22,6 @@ void printLL(Node*head){
 	}
 	cout<<"\n";
 }
-
-
-Node*reverseLLEfiectively(Node*head){
-	Node*current=head;
-	Node*temp=head;
-	Node*store=head->next;
-	Node*pre=head;
-	head->next=NULL;
-	
-	while(current!=NULL){//100
-		Node*help=store;//200
-		pre=help->next;//300
-		help->next=current;//200 100
-		current=pre;//200
-		store=store->next;
-		cout<<"Stores data "<<store->data<<"\n";
-		
-		
-	}
-	return pre;
-}
 Node*reverseLL(Node*head){
 	vector<int> v;
 	Node*temp=head;
@@ -262,12 +241,7 @@ int main(){
 	reverseLL(head);
 	cout<<"After reversing the LL"<<"\n";
 	printLL(head);
-	
-//	reverseLLEfiectively(head);
-//	cout<<"After reversing the LL efectively"<<"\n";
-//	printLL(head);
-//	Node*ans=removeDuplicates(head);
-//	printLL(ans);
+
 	
 	
 }
