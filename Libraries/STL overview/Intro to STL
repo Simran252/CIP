@@ -1,0 +1,8 @@
+STL
+ 1. Containers
+      simple=forward _list,list,vectors tec.
+      Associative=set,map multimap,unordered_set etc
+      Container Adapters=Queue,Stack,Priority_Queue.
+      
+ 2.Algorithms=binary_search,sort,find,reverse etc
+ 
