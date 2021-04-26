@@ -7,32 +7,31 @@
 using namespace std;
 int longestsubArrayWithGivemSum(int arr[],int n,int sum){
     //using prefix sum and hashing 
-    int start=0,end,maximum=INT_MIN;
+    int start=0,end,maximum=0;
     unordered_map<int,int> map;
     int prefix_sum=0;
     for (int i = 0; i <n; i++)
     {
-        prefix_sum+=arr[i];
-        if (map.find(prefix_sum)==map.end())
-        {
+       prefix_sum+=arr[i];
+       if (prefix_sum==sum)
+       {
+           return i+1;
+       }
+       
+       if (map.find(prefix_sum)==map.end())
+       {
+            map.insert({prefix_sum,i});
 
-             map.insert({prefix_sum,i});
-        }
-        
-        if(map.find(prefix_sum-sum)!=map.end())
-        {
+       }
+       if (map.find(prefix_sum-sum)!=map.end())
+       {
+           int end=i;
+           auto it=map.find(prefix_sum-sum);
+           int start=it->second;
+           maximum=max(maximum,end-start);
 
-
-            auto it=map.find(prefix_sum-sum);
-            int end=it->second;
-            maximum=max(maximum,i-start);
-            start=end++;
-
-            
-            
-        
-        }
-
+       }
+       
 
         
     }
@@ -54,6 +53,7 @@ cout<<"Enter test cases"<<"\n";
         {
             cin>>arr1[i];
         } 
+        cout<<"enter sum "<<"\n";
         int sum;
         cin>>sum;
         int res=longestsubArrayWithGivemSum(arr1,m,sum);
