@@ -15,7 +15,7 @@ int longestsubArrayWithGivemSum(int arr[],int n,int sum){
        prefix_sum+=arr[i];
        if (prefix_sum==sum)
        {
-           return i+1;
+           maximum=i+1;
        }
        
        if (map.find(prefix_sum)==map.end())

@@ -13,7 +13,7 @@ int efficientApproach(const string &s1){
     cout<<"\n";
     
     int res;
-    for (int i=s1.size();i>=0;i--)
+    for (int i=s1.size()-1;i>=0;i--)
     {    
         if (visited[s1[i]]!=-1){
             res=i;
