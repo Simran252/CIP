@@ -37,14 +37,6 @@ int longestsubArrayWithGivemSumUsingHashing(int arr[],int n){
     
 return maximum;
 
-
-
-
-    
-
-    
-
-
 }
 int main(){
 cout<<"Enter test cases"<<"\n";
