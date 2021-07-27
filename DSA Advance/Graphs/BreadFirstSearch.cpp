@@ -13,9 +13,6 @@ class Edge{
 
 
 };
-
-
-
 void breadthFirstSearch(vector<vector<int>> &res,int v,int s,bool*visited){
     // bool visited[v];
     // for (int i = 0; i <v; i++).
@@ -40,15 +37,8 @@ void breadthFirstSearch(vector<vector<int>> &res,int v,int s,bool*visited){
                 visited[res[a][i]]=true;
 
             }
-            
-
         }
-
-        
-
     }
-    
-
 }
 void disconnecedGraph(vector<vector<int>> &res,int v){
     bool visited[v];
