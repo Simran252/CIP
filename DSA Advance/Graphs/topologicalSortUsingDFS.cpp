@@ -50,8 +50,6 @@ vector<int> topologicalSorting(vector<vector<int>> adj,int v){
         /* code */
         if(visited[i]==false){
             util(adj,v,visited,st,i);
-
-
         }
     }
     while (st.empty()==false)
@@ -61,11 +59,6 @@ vector<int> topologicalSorting(vector<vector<int>> adj,int v){
         st.pop();
     }
     return res;
-    
-
-
-
-
 }
 int main(){
     int v=6;
