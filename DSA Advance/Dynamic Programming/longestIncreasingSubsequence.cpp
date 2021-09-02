@@ -9,6 +9,7 @@ int longestIncreasingSequence(int arr[], int n){
 
         for(int j=0;j<=i-1;j++){
             if(arr[j]<arr[i]){
+                
                 dp[i]=max(dp[i],dp[j]+1);
 
             }
