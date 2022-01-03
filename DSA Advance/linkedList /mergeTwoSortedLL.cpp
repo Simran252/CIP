@@ -11,47 +11,43 @@ class Node{
 
     }
 };
-void mergell(Node*head1, Node*head2){
+Node*takeInput(){
+    int data;
+    cin>>data;
+    Node*root, *currNode;
+    bool flag=false;
+    while(data!=-1){
+        if(flag==false){
+             root=new Node(data);
+             currNode=root;
+             flag=true;
+             
+        }
+        else{
 
-    /*
-    head1   head2   prev1   prev2
-    100     600
-    100 200 300 400 500
-    5   7   10  13  9   N
+        
+        Node*nextNode=new Node(data);
+        currNode->next=nextNode;
+        currNode=nextNode;
 
-    600 700 800 900 1000
-    3   5   8   9   14  N
-
-    step1
-    
-    600 100 200 300 400 500
-    3    5   7   10  13  9   N
-
-    700 800 900 1000
-    5   8   9   14  N
-
-    100     700     600
-
-    else
-    600 700 100 200 300 400 500
-    3    5   5   7   10  13  9   N
-
-    800 900 1000
-    8   9   14  N
-    200       800
+        }
+        cin>>data;
 
 
+    }
+    return root;
+}
+void printLL(Node*curr){
+
+    while(curr!=NULL){
+        cout<<curr->data<<" ";
+        curr=curr->next;
+    }
+}
+Node* mergell(Node*head1, Node*head2){
+   Node*a=head1, *b=head2;
 
 
-    
-
-
-
-    */
-
-    Node*next1, *next2;
-    Node*prev1, *prev2;
-    Node*root1=head1, *root2=head2;
 
     if(head1==NULL){
         return head2;
@@ -59,34 +55,80 @@ void mergell(Node*head1, Node*head2){
     if(head2==NULL){
         return head1;
     }
-    while(head1!=NULL && head2!=NULL){
-        if((head1->data)<(head2->data)){
+    Node*tail, *root;
+    bool flag=false;
+    while(a!=NULL && b!=NULL){
+        if((a->data)<=(b->data)){
+            if(flag==false){
+                root=a;
+                tail=a;
+                a=a->next;
+                
+                flag=true;
+            }
+            else{
+                tail->next=a;
+                tail=a;
+                a=tail->next;
 
-
-        }
-        else if((head1->data)>(head2->data)){
-            //attach head2 to the start of head1
-            root1=head2;
-            next2=head->next;
-            prev1=head2;
-            head1->next=head2;
-            head1=head1->next;
+            }
             
 
         }
-        else{
-            
-            head2=head2->next;
-            prev1->next=head1;
-            head1->next=head2;
-            next1=heas
+        else if((b->data)<(a->data)){
+            if(flag==false){
+                root=b;
+                tail=b;
+                b=b->next;
+                flag=true;
+                
+
+            }
+            else{
+                tail->next=b;
+                tail=b;
+                b=tail->next;
+            }
         }
+
+    }
+    if(a==NULL && b!=NULL){
+        tail->next=b;
+        
     }
 
+    if(b==NULL && a!=NULL){
+        tail->next=a;
+        
+    }
+    return root;
 }
 int main(){
-    Node*head=new Node(2);
-    mergell(head, head);
+    cout<<"enter ll 1"<<"\n";
+   Node*n1= takeInput();
+//    printLL(n1);
+   cout<<"\n"<<"enter ll 2"<<"\n";
+   
+   Node*n2= takeInput();
+//    cout<<"\n";
+//    printLL(n2);
+    
+    // Node*n1=new Node(1);
+    // n1->next=new Node(2);
+    // n1->next->next=new Node(3);
+    // n1->next->next->next=new Node(4);
+
+    // Node*n2=new Node(5);
+    // n2->next=new Node(6);
+    cout<<"merged ll is "<<"\n";
+    Node*ans=mergell(n1, n2);
+    printLL(ans);
 
     
 }
+
+// enter ll 1
+// 1 2 3 6 7 -1
+
+// enter ll 2
+// 1 5 8 9 10 -1
