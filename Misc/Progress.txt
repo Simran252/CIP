@@ -1,0 +1,5 @@
+#6th Jan 2022
+#Learned XOR of linked list
+#Did merge of two sorted ll on gfg
+#Did potd
+:)
